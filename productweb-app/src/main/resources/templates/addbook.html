@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1" />
+<title>Add book</title>
+<style>
+table {
+	border-collapse: collapse;
+	width: 50%;
+	margin-left: 200px;
+}
+
+th, td {
+	text-align: left;
+	padding: 8px;
+}
+
+.button {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	margin-left: 20px;
+	margin-top: 40px;
+}
+</style>
+</head>
+<body>
+	<h2>Add book</h2>
+	<form action="../book/books" method="get">
+		<table>
+			<tbody>
+				<tr>
+					<th>name</th>
+					<td><input type="text" name="name" required="required" /></td>
+				</tr>
+				<tr>
+					<th>Author name</th>
+					<td><input type="text" name="aname" required="required" /></td>
+				</tr>
+				<tr>
+					<th>description</th>
+					<td><input type="text" name="description" required="required" />
+					</td>
+				</tr>
+				<tr>
+					<th>price</th>
+					<td><input type="number" name="price" required="required" /></td>
+				</tr>
+
+				<tr>
+					<td>
+						<button type="submit" class="button">Submit</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+	<a href="../book/booklist">list the books</a>
+</body>
+</html>

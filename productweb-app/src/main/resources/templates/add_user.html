@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1" />
+<title>Add User</title>
+<style>
+table {
+	border-collapse: collapse;
+	width: 50%;
+	margin-left: 200px;
+}
+
+th, td {
+	text-align: left;
+	padding: 8px;
+}
+
+.button {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	margin-left: 20px;
+	margin-top: 80px;
+}
+
+</style>
+</head>
+<body>
+	<h2>Add User</h2>
+	<form action="../users/save" method="POST">
+		<table>
+			<tbody>
+				<tr>
+					<th>Name</th>
+					<td><input type="text" name="name" required="required"
+						autofocus="autofocus" /></td>
+				</tr>
+				<tr>
+					<th>Email</th>
+					<td><input type="email" name="email" required="required" /></td>
+				</tr>
+				<tr>
+					<th>Password</th>
+					<td><input type="password" name="password" required="required" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button type="submit" class="button">Submit</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+		<a href="../book/booklist">list the books</a>
+
+	
+</body>
+</html>

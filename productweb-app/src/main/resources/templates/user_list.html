@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1" />
+<title>User List</title>
+</head>
+<style>
+table {
+    border-collapse: collapse;
+    width: 50%;
+   margin-left:200px;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+.button{
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	margin-left: 420px;
+	margin-top: 80px;
+}
+.button1 {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	margin-left: 420px;
+	margin-top: 20px;
+}
+.button2 {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	margin-left: 420px;
+	margin-top: 10px;
+}
+</style>
+<body>
+	<h2 style="color:green;">List of Users</h2>
+
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Sno</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Active</th>
+				<th></th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="user : ${USER_LIST}">
+				<td th:text="${user.id}"></td>
+				<td th:text="${user.name}"></td>
+				<td th:text="${user.email}"></td>
+				<td th:text="${user.active}"></td>
+				<td><a href="" th:href="@{/users/edit(id=${user.id})}">Edit</a> </td>
+				<td th:if="!${user.active}"><a href="" th:href="@{/users/activate(id=${user.id})}">Activate</a> </td>
+				<td th:if="${user.active}" ><a href="" th:href="@{/users/deactivate(id=${user.id})}">Deactivate</a> </td>
+				<td><a href="" th:href="@{/users/delete(id=${user.id})}">Delete</a> </td>
+			</tr>
+		</tbody>
+	</table>
+
+	<a href="../users/create" class="button">Add User</a><br/>
+		<a href="../users/login" class="button1">Login</a><br/>
+		<a href="..//book/booklist" class="button2">Listofbooks</a>
+		
+</body>
+</html>
